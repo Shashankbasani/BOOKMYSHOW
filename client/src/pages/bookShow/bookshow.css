@@ -1,0 +1,53 @@
+/* Container for the entire grid */
+.matrix-grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+    gap: 10px; /* Space between buttons */
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* Responsive design */
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Make grid responsive */
+  }
+  
+  /* Button styling */
+  .matrix-button {
+    width: 60px;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Toggled (clicked) button */
+  .matrix-button.toggled {
+    background-color: green;
+  }
+  
+  /* Hover effect for buttons */
+  .matrix-button:hover {
+    background-color: darkorange;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive behavior for smaller screens */
+  @media (max-width: 768px) {
+    .matrix-grid-container {
+      grid-template-columns: repeat(6, 1fr); /* 6 columns for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .matrix-grid-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 columns for very small screens */
+    }
+  }
+  
